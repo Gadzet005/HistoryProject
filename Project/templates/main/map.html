@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Карта{% endblock title %}
+
+{% block content %}
+<h1 class="text-center">
+    Карта
+</h1>
+<p class="text-center">Тут должна быть карта</p>
+<p>Экспонаты:</p>
+<ul class="list-group list-group-flush">
+    {% for factory in factories %}
+        <li class="list-group-item">{{ factory.title }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
