@@ -7,10 +7,10 @@
     Карта
 </h1>
 <p class="text-center">Тут должна быть карта</p>
-<p>Экспонаты:</p>
+<p>Фабрики на карте:</p>
 <ul class="list-group list-group-flush">
     {% for factory in factories %}
-        <li class="list-group-item">{{ factory.title }}</li>
+        <li class="list-group-item"><a href="{{ factory.get_absolute_url }}">{{ factory.name }}</a></li>
     {% endfor %}
 </ul>
 

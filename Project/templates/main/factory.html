@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Статья{% endblock title %}
+
+{% block content %}
+
+<h1 class="text-center">
+    {{ factory.name }}
+</h1>
+
+<h3>Картинки:</h3>
+{% for picture in factory.pictures.all %}
+<img src="{{ picture.image.url }}" alt="Картинка">
+<p>Подпись: {{ picture.text }}</p>
+{% endfor %}
+
+<h3>Описание:</h3>
+<p>{{ factory.description }}</p>
+
+{% endblock content %}
