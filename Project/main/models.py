@@ -13,6 +13,7 @@ class Exhibit(models.Model):
 class Factory(Exhibit):
     lat_coord = models.DecimalField(max_digits=8, decimal_places=4, default=0.0)
     long_coord = models.DecimalField(max_digits=8, decimal_places=4, default=0.0)
+    image = models.ImageField("Картинка завода", upload_to="factory_images/%Y/%m", null=True)
 
     class Meta:
         verbose_name = "Завод"

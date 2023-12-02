@@ -1,4 +1,5 @@
 from django.views.generic import TemplateView, ListView, DetailView
+from django.db.models import Min
 
 from main.models import Factory, Picture
 
@@ -22,6 +23,6 @@ class FactoryPage(DetailView):
 
 
 def MapPage(request):
-    picturies = Picture.objects.all()
+    factories = Factory.objects.all()
 
-    return render(request, "main/map.html", {"picturies": picturies, "redirectTo": "/factory/"})
+    return render(request, "main/map.html", {"factories": factories, "redirectTo": "/factory/"})

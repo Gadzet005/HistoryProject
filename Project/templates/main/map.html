@@ -33,27 +33,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
 
-            <meta name="viewport" content="width=device-width,
-                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-            <style>
-                #map {
-                    position: relative;
-                    width: 99.9%;
-                    height: 1900px;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-                .leaflet-container { font-size: 1rem; }
-            </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>
+        #map {
+            position: relative;
+            width: 99.9%;
+            height: 1900px;
+            left: 0.0%;
+            top: 0.0%;
+        }
+        .leaflet-container { font-size: 1rem; }
+    </style>
 
     <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
 </head>
 <body>
-
-
-            <div class="folium-map" id="map" ></div>
-
+<div class="folium-map" id="map" ></div>
 </body>
 <script>
         var map = L.map(
@@ -75,22 +71,23 @@
         tile_layer.addTo(map);
 
         var factory_icon = L.icon({"iconUrl": "https://cdn-icons-png.flaticon.com/512/5131/5131491.png"});
-        {% for picture in picturies %}
+        {% for factory in factories %}
             {% localize on %}
 
             var marker = L.marker(
-                         [{{ picture.factory.lat_coord|unlocalize }}, {{ picture.factory.long_coord|unlocalize }}],
+                         [{{ factory.lat_coord|unlocalize }}, {{ factory.long_coord|unlocalize }}],
                          {}
                          ).addTo(map).on('click', function() {
-                            window.location.href = '{{ redirectTo }}' + '{{ picture.factory.id }}';
+                            window.location.href = '{{ redirectTo }}' + '{{ factory.id }}';
                          });;
 
             {% endlocalize %}
+
             marker.bindTooltip(
                 `
                  <figure>
-                 <img style="max-width:700px;max-height:700px;" src="/media/{{ picture.image }}">
-                 <figcaption style="text-align: center;"> {{picture.factory.name}} </figcaption>
+                 <img style="max-width:700px;max-height:700px;" src="/media/{{ factory.image }}">
+                 <figcaption style="text-align: center;"> {{ factory.name }} </figcaption>
                  </figure>
                  `,
                 {"sticky": true}
