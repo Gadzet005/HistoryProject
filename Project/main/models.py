@@ -11,10 +11,13 @@ class Exhibit(models.Model):
 
 
 class Factory(Exhibit):
+    lat_coord = models.DecimalField(max_digits=8, decimal_places=4, default=0.0)
+    long_coord = models.DecimalField(max_digits=8, decimal_places=4, default=0.0)
+
     class Meta:
         verbose_name = "Завод"
         verbose_name_plural = "Заводы"
-    
+
     def get_absolute_url(self):
         return reverse('main:factory', kwargs={'factory_id': self.pk})
 

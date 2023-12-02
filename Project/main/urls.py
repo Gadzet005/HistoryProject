@@ -8,7 +8,7 @@ app_name = "main"
 
 urlpatterns = [
     path("", views.AboutPage.as_view(), name="about"),
-    path("map/", views.MapPage.as_view(), name="map"),
+    path("map/", views.MapPage, name="map"),
     path("factory/<int:factory_id>/", views.FactoryPage.as_view(), name="factory"),
 ]
 
