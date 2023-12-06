@@ -25,7 +25,7 @@ class Factory(Exhibit):
 
 class Picture(models.Model):
     image = models.ImageField("Картинка", upload_to="images/%Y/%m")
-    text = models.CharField("Подпись", max_length=100)
+    text = models.CharField("Подпись", max_length=100, null=True, blank=True)
     factory = models.ForeignKey(
         Factory, verbose_name="Фабрика", on_delete=models.CASCADE
     )

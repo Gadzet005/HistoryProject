@@ -1,0 +1,57 @@
+.my-block {
+	margin: 0;
+	background-color: #f1f0f1;
+}
+
+.exit {
+	margin: 15px 45px;
+	display: flex;
+	align-items: center;
+	position: fixed;
+}
+
+.header {
+	background-color: #606060; /* цветовой фон за изображением */
+    height: 100vh;
+	background-repeat: no-repeat;
+	background-position: 0% 0%; 
+	background-attachment: local;
+	background-size: cover;
+}
+
+.title {
+	font-size: 70px;
+	font-weight: 400;
+}
+
+.date {
+	font-size: 50px;
+	font-weight: 400;
+}
+
+.header-title {
+	text-align: center;
+	padding-top: 250px;
+	color: white;
+}
+
+.container {
+	margin: 30px 180px;
+}
+
+.text {
+	margin-bottom: 80px;
+}
+
+.gallery {
+	text-align: center;
+}
+
+.foto {
+	margin-top: 55px;
+}
+
+.signature {
+	font-size: 20px;
+	font-weight: 100;
+}
