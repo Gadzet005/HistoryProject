@@ -10,7 +10,7 @@
     <p class="fs-5">Пройдясь по залам нашего музея, вы познакомитесь с династиями промышленников, прогуляетесь по городам-заводам Урала, увидите продукцию этих заводов и узнаете, как жили на них рабочие.</p>
 
     <div class="text-center m-5">
-        <a class="btn btn-primary btn-lg fs-5" href="{% url "main:map" %}">Начать осмотр</a>
+        <a class="btn btn-primary btn-lg fs-5" href="{{ article.get_absolute_url }}">Начать осмотр</a>
     </div>
 
     <p class="fs-5">Также в нашем музее вы можете познакомиться с историей наиболее известных металлургических предприятий Урала. Для этого перейдите в раздел <a class="text-decoration-none" href="{% url "main:map" %}">Карта</a> и кликните на заинтересовавший вас завод.</p>
@@ -18,8 +18,9 @@
     <div class="text-center m-5">
         <a class="btn btn-success btn-lg fs-5" href="{% url "main:map" %}">Перейти к карте</a>
     </div>
+</div>
 
-    <div class="py-3 my-4 border-top container fixed-bottom">
+<div class="border-top container" style="margin-top: 15%;">
     <h4>Список использованной литературы:</h4>
     <ul>
         <li>Хью Хадсон-мл. Первые Демидовы и развитие чёрной металлургии России в XVIII веке;</li>
@@ -27,7 +28,5 @@
         <li>Гудков Г. Ф., Гудкова З. И. Из истории южноуральских горных заводов XVIII—XIX веков : Историко-краеведческие очерки.</li>
     </ul>
     <p>Сайт сделан студентами группы 232 ОП Программная инженерия ФКН НИУ ВШЭ</p>
-    </div>
-
 </div>
 {% endblock content %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }}{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">{{ article.title }}</h1>
+    {{ article.text|safe }}
+
+    <div class="my-5 d-flex justify-content-between">
+        <div>
+            {% if prev %}
+            <a class="btn btn-success btn-lg" href="{{ prev.get_absolute_url }}">Предыдущий зал</a>
+            {% endif %}
+        </div>
+        <div>
+            {% if article.next %}
+            <a class="btn btn-success btn-lg" href="{{ article.next.get_absolute_url }}">Следующий зал</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
+ 

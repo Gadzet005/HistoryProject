@@ -1,6 +1,4 @@
 from django.urls import path
-from django.conf import settings
-from django.conf.urls.static import static
 
 import main.views as views
 
@@ -10,7 +8,5 @@ urlpatterns = [
     path("", views.AboutPage.as_view(), name="about"),
     path("map/", views.MapPage, name="map"),
     path("factory/<int:factory_id>/", views.FactoryPage.as_view(), name="factory"),
+    path("article/<int:article_id>/", views.ArticlePage.as_view(), name="article"),
 ]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

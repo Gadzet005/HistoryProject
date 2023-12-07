@@ -16,7 +16,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main'
+    'main',
+    'django_summernote'
 ]
 
 MIDDLEWARE = [
@@ -93,3 +94,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = "media/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SUMMERNOTE_CONFIG = {
+    'attachment_filesize_limit': 1024 * 1024 * 1024,
+}
