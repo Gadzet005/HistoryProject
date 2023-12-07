@@ -10,6 +10,6 @@ class PicturesInline(admin.TabularInline):
 
 @admin.register(Factory)
 class FactoryAdmin(admin.ModelAdmin):
-    fields = ("name", "description", "image", "lat_coord", "long_coord")
+    fields = ("name", "description", "image", "lat_coord", "long_coord", "is_factory")
     list_display = ("name",)
     inlines = (PicturesInline,)
