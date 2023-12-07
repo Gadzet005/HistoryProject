@@ -67,6 +67,7 @@
         tile_layer.addTo(map);
 
         var factory_icon = L.icon({"iconUrl": "https://cdn-icons-png.flaticon.com/512/5131/5131491.png"});
+        var town_icon = L.icon({"iconUrl": "https://cdn-icons-png.flaticon.com/512/3002/3002597.png"});
         {% for factory in factories %}
             {% localize on %}
 
@@ -89,7 +90,11 @@
                 {"sticky": true}
             );
 
-            marker.setIcon(factory_icon);
+            {% if factory.is_factory == True %}
+                marker.setIcon(factory_icon);
+            {% else %}
+                marker.setIcon(town_icon);
+            {% endif %}
 
         {% endfor %}
 
