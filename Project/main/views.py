@@ -1,15 +1,15 @@
-from typing import Any
 from django.views.generic import TemplateView, DetailView
+from django.shortcuts import render
 
 from main.models import Factory, Article
 
-from django.shortcuts import render
-
 class AboutPage(TemplateView):
     template_name = "main/about.html"
-    extra_context = {
-        "article": Article.objects.first()
-    }
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["article"] = Article.objects.first()
+        return context
 
 
 class FactoryPage(DetailView):
