@@ -14,7 +14,7 @@
 	
 	<div class="header" style="background-image: url('{{ factory.image.url }}');">
 		<div class="header-title">
-			<div class="title">{{ factory.name }}</div>
+			<div class="title bg-white mx-auto w-50 rounded-5 text-black">{{ factory.name }}</div>
 		</div>
 	</div>
 	
@@ -27,7 +27,7 @@
 			{% for picture in factory.pictures.all %}
 				<img class="foto" src="{{ picture.image.url }}" alt="фото">
 				{% if picture.text %}
-				<div class="signature">{{ picture.text }}</div>
+				<p class="fst-italic fs-6">{{ picture.text }}</p>
 				{% endif %}
 			{% endfor %}
 		</div>
