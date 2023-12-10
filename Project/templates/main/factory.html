@@ -25,7 +25,7 @@
 		<div class="gallery">
 			<div class="title">Галерея</div>
 			{% for picture in factory.pictures.all %}
-				<img class="foto" src="{{ picture.image.url }}" alt="фото">
+				<img class="foto mw-100 h-auto" src="{{ picture.image.url }}" alt="фото">
 				{% if picture.text %}
 				<p class="fst-italic fs-6">{{ picture.text }}</p>
 				{% endif %}
