@@ -85,7 +85,7 @@ USE_TZ = True
 
 
 STATIC_URL = 'static/'
-STATICT_ROOT = BASE_DIR / 'static'
+STATICT_ROOT = BASE_DIR / 'static_prod'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
